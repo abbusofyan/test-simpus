@@ -16,6 +16,44 @@
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
+					<form method="POST" action="{{ route('patients.create') }}">
+						@csrf
+						<div class="mb-2">
+							<x-label value="{{ __('Name') }}" />
+							<x-input class="block mt-1 w-full" name="name" :value="old('name')"  autofocus autocomplete="name" />
+							@error('name')
+					            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+					        @enderror
+						</div>
+						<div class="mb-2">
+						    <x-label for="gender" value="{{ __('Gender') }}" />
+						    <select name="gender" id="gender" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+						        <option value="">-- Select Gender --</option>
+						        <option value="1" {{ old('gender') == '1' ? 'selected' : '' }}>Male</option>
+						        <option value="2" {{ old('gender') == '2' ? 'selected' : '' }}>Female</option>
+						    </select>
+
+						    @error('gender')
+						        <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+						    @enderror
+						</div>
+
+						<div class="mb-2">
+							<x-label value="{{ __('Birthdate') }}" />
+							<x-input class="block mt-1 w-full" type="date" name="birthdate" :value="old('birthdate')"  autofocus autocomplete="birthdate" />
+							@error('birthdate')
+					            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+					        @enderror
+						</div>
+
+						<div class="flex items-center justify-start mt-4">
+							<x-button class="ms-4">
+								{{ __('Add Patient') }}
+							</x-button>
+						</div>
+					</form>
+					<hr class="mt-4 mb-4">
+
                     <table class="table-auto w-full">
                         <thead>
                             <tr>
