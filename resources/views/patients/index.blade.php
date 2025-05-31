@@ -33,7 +33,7 @@
                                     <!-- BUG: gender displayed raw numeric -->
                                     <td>{{ $p->gender }}</td>
                                     <!-- BUG: birthdate shown raw string -->
-                                    <td>{{ $p->birthdate }}</td>
+									<td>{{ \Carbon\Carbon::parse($p->birthdate)->format('d M Y') }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
