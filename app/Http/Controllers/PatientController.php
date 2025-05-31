@@ -3,6 +3,7 @@
 namespace App\Http\Controllers; // BUG: wrong namespace, should be App\Http\Controllers
 
 // BUG: missing use Patient model
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class PatientController
