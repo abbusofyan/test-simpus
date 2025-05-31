@@ -11,6 +11,12 @@ class PatientController
     public function create(Request $request)
     {
         // BUG: missing validation
+		$data = $request->validate([
+            'name' => 'required|string|max:255',
+            'gender' => 'required|in:male,female',
+            'birthdate' => 'required|date',
+        ]);
+
         $data = $request->all();
         // BUG: undefined model reference
         Patient::create($data);
