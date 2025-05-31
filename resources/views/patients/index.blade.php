@@ -29,8 +29,8 @@
 						    <x-label for="gender" value="{{ __('Gender') }}" />
 						    <select name="gender" id="gender" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
 						        <option value="">-- Select Gender --</option>
-						        <option value="1" {{ old('gender') == '1' ? 'selected' : '' }}>Male</option>
-						        <option value="2" {{ old('gender') == '2' ? 'selected' : '' }}>Female</option>
+						        <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
+						        <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
 						    </select>
 
 						    @error('gender')
