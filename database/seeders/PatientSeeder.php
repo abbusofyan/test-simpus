@@ -17,9 +17,9 @@ class PatientSeeder extends Seeder
 		$faker = Faker::create();
 
         foreach (range(1, 20) as $i) {
-            $gender = $faker->numberBetween(0, 1);
+            $gender = $faker->randomElement(['male', 'female']);
             DB::table('patients')->insert([
-                'name' => $faker->name($gender === 0 ? 'male' : 'female'),
+                'name' => $faker->name($gender),
                 'gender' => $gender,
                 'birthdate' => $faker->dateTimeBetween('1950-01-01', '2020-12-31')->format('Y-m-d'),
             ]);
