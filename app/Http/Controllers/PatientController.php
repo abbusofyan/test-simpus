@@ -17,7 +17,6 @@ class PatientController
             'birthdate' => 'required|date',
         ]);
 
-        $data = $request->all();
         // BUG: undefined model reference
         Patient::create($data);
 
