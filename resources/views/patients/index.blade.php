@@ -77,7 +77,6 @@
                         </tbody>
                     </table>
 
-                    <a href="/patients/create" class="btn btn-primary">Add Patient</a>
                 </div>
             </div>
         </div>
