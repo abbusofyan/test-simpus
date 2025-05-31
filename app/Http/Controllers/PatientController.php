@@ -23,6 +23,6 @@ class PatientController
         // BUG: wrong variable name $patientsx
         $patients = Patient::select('id','name','gender','birthdate')->get();
 
-        return view('patients.index', compact('patientsx'));
+        return view('patients.index', compact('patients'));
     }
 }
