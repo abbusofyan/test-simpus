@@ -1,7 +1,6 @@
-
 <?php
 
-namespace App\Controllers; // BUG: wrong namespace, should be App\Http\Controllers
+namespace App\Http\Controllers; // BUG: wrong namespace, should be App\Http\Controllers
 
 // BUG: missing use Patient model
 use Illuminate\Http\Request;
